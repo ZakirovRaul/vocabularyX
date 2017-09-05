@@ -58,7 +58,7 @@ $(document).on('click', "#dataGrid tbody tr", function (e) {
         });
     }
 });
-var validator = $('#newWordForm').validate({
+var validator = $('#createWordForm').validate({
     rules: {
         origin: 'required',
         version: 'required'

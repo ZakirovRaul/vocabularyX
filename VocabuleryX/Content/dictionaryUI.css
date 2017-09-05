@@ -5,7 +5,6 @@
     margin-right: 20px;
 }
 .grid{
-    height: 500px;
     overflow: auto;
     margin-top:20px;
 }
@@ -86,14 +85,19 @@
 
 .row-functions {
     width: 100%;
-    padding-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #778899;
     border: solid 1px;
 }
 
-#newWordForm hr {
+#createWordPanel hr {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+#createWordPanel .form-group {
+    margin-bottom: 10px;
 }
 
 .error {

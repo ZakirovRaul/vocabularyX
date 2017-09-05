@@ -12,45 +12,37 @@
 </script>
 <div class="row-functions">
     <div class="container">
-        @using (Ajax.BeginForm("CreateWord", "Dictionary", null, new AjaxOptions() { OnBegin ="OnBegin", OnSuccess = "OnSuccess", OnFailure = "OnFailure", OnComplete = "OnComplete", LoadingElementId = "loadingBar", LoadingElementDuration = 100}, new { @class = "form-horizontal", id = "newWordForm" }))
-        {
-            <span>Create a new word.</span>
-            <hr />
-            <div class="form-group">
-                @Html.Label("txtOrigin", "Origin", new { @class = "control-label col-md-1"})
-                <div class="col-md-5">
-                    @Html.TextBox("origin", "", new {@class = "form-control", id = "txtOrigin"})
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.Label("txtVersion", "Version", new {@class = "control-label col-md-1"})
-                <div class="col-md-5">
-                    @Html.TextBox("version", "", new { @class = "form-control", id = "txtVersion" })
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-1 col-md-1">
-                    <button class="btn btn-default" id="btnNewWord">Add</button>
-                </div>
-                <div class="col-md-4">
-                    <div id="loadingBar">
-                        <span class="fa fa-spinner fa-spin"></span><span> Loading...</span>
+        <div>
+            <a data-toggle="collapse" href="#createWordPanel" class="btn btn-default"><span>Create a new word.</span></a>
+        </div>
+        <div id="createWordPanel" class="collapse">
+            @using (Ajax.BeginForm("CreateWord", "Dictionary", null, new AjaxOptions() {OnBegin = "OnBegin", OnSuccess = "OnSuccess", OnFailure = "OnFailure", OnComplete = "OnComplete", LoadingElementId = "loadingBar", LoadingElementDuration = 100}, new {@class = "form-horizontal", id = "createWordForm"}))
+            {
+                <hr/>
+                <div class="form-group">
+                    @Html.Label("txtOrigin", "Origin", new {@class = "control-label col-md-1"})
+                    <div class="col-md-5">
+                        @Html.TextBox("origin", "", new {@class = "form-control", id = "txtOrigin"})
                     </div>
                 </div>
-            </div>
-            <!--
-            <div class="row">
-                <label for="txtOrigin" class="col-sm-1">Origin:</label>
-                <input type="text" id="txtOrigin" class="col-sm-5" name="origin" />
-            </div>
-            <div class="row">
-                <label for="txtVersion" class="col-sm-1">Version:</label>
-                <input type="text" id="txtVersion" class="col-sm-5" name="version" />
-            </div>
-            <div class="row">
-                <div class="col-sm-1"></div><button class="btn btn-default col-sm-3">Add</button>
-            </div>-->
-        }
+                <div class="form-group">
+                    @Html.Label("txtVersion", "Version", new {@class = "control-label col-md-1"})
+                    <div class="col-md-5">
+                        @Html.TextBox("version", "", new {@class = "form-control", id = "txtVersion"})
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-1 col-md-1">
+                        <button class="btn btn-default" id="btnNewWord">Add</button>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="loadingBar">
+                            <span class="fa fa-spinner fa-spin"></span><span> Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 </div>
 <div>
