@@ -1,0 +1,120 @@
+﻿@model IEnumerable<VocabuleryX.DAL.Entities.Word>
+@{
+    ViewBag.Title = "Dictionary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@section scripts{
+    @Styles.Render("~/Content/dictionaryUI.css")
+    @Scripts.Render("~/Scripts/Dev/dictionary.js");
+}
+<script type="text/javascript">
+</script>
+<div class="row-functions">
+    <div class="container">
+        @using (Ajax.BeginForm("CreateWord", "Dictionary", null, new AjaxOptions() { OnBegin ="OnBegin", OnSuccess = "OnSuccess", OnFailure = "OnFailure", OnComplete = "OnComplete", LoadingElementId = "loadingBar", LoadingElementDuration = 100}, new { @class = "form-horizontal", id = "newWordForm" }))
+        {
+            <span>Create a new word.</span>
+            <hr />
+            <div class="form-group">
+                @Html.Label("txtOrigin", "Origin", new { @class = "control-label col-md-1"})
+                <div class="col-md-5">
+                    @Html.TextBox("origin", "", new {@class = "form-control", id = "txtOrigin"})
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("txtVersion", "Version", new {@class = "control-label col-md-1"})
+                <div class="col-md-5">
+                    @Html.TextBox("version", "", new { @class = "form-control", id = "txtVersion" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-1 col-md-1">
+                    <button class="btn btn-default" id="btnNewWord">Add</button>
+                </div>
+                <div class="col-md-4">
+                    <div id="loadingBar">
+                        <span class="fa fa-spinner fa-spin"></span><span> Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="row">
+                <label for="txtOrigin" class="col-sm-1">Origin:</label>
+                <input type="text" id="txtOrigin" class="col-sm-5" name="origin" />
+            </div>
+            <div class="row">
+                <label for="txtVersion" class="col-sm-1">Version:</label>
+                <input type="text" id="txtVersion" class="col-sm-5" name="version" />
+            </div>
+            <div class="row">
+                <div class="col-sm-1"></div><button class="btn btn-default col-sm-3">Add</button>
+            </div>-->
+        }
+    </div>
+</div>
+<div>
+    <div>
+        
+    </div>
+</div>
+
+
+<div class="grid-wrapper">
+    <div class="grid">
+        <table class="table table-hover" id="dataGrid">
+            <thead>
+            <tr>
+                <th class="grid-col-1">
+                    <div class="grid-col-1"></div></th>
+                <th class="grid-col-2">
+                    <div class="grid-col-2">Word</div></th>
+                <th class="grid-col-3">
+                    <div class="grid-col-3">Translation</div></th>
+                <th class="grid-col-4">
+                    <div class="grid-col-4 text-center">Status</div></th>
+                <th class="grid-col-5">
+                    <div class="grid-col-5 text-center">Action</div></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr data-id="@item.Id">
+                    <td>
+                        <button class="btn btn-default">
+                            <span class="glyphicon glyphicon-play-circle" aria-hidden="true" name="speech"></span>
+                        </button>
+                    </td>
+                    <td>
+                        <span class="word-origin row-read">@item.Origin</span>
+                        <input class="input-sm word-origin row-edit" value="sample">
+                    </td>
+                    <td>
+                        <span class="word-version row-read">@item.Version</span>
+                        <input class="input-sm word-version row-edit" value="primer">
+                    </td>
+                    <td class="text-center">
+                        <span class="glyphicon glyphicon-ok-circle" name="status"></span>
+                    </td>
+                    <td class="text-center">
+                        <button class="btn btn-default row-read" name="btnEdit">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </button>
+                        <button class="btn btn-default row-read" name="btnRemove">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                        <button class="btn btn-default row-edit" name="btnEditOk">
+                            <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
+                        </button>
+                        <button class="btn btn-default row-edit" name="btnEditCancel">
+                            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+

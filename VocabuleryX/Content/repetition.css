@@ -1,0 +1,95 @@
+﻿.container .row{
+    padding-top: 20px;
+}
+
+.voice{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.highlighted{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+#lesson1 {
+    display: none;
+}
+
+#lesson1 .originWord{
+    font-size: 45px;
+}
+
+#lesson1 .optionWord {
+    font-size: 25px;
+}
+
+#lesson3 {
+    display: none;
+}
+
+#lesson3 .originWord{
+    font-size: 45px;
+}
+#lesson3 .voice {
+    text-decoration: underline;
+}
+
+#charsGroup span{
+    vertical-align: top;
+    display: inline-block;
+    width: 50px;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    border: 1px black solid;
+    padding: 10px;
+}
+
+#spell span{
+    display: inline-block;
+    width: 50px;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    border: 1px black solid;
+    background-color: #c4e3f3;
+    padding: 10px;
+}
+
+#lessonResults {
+    display: block;
+}
+#lessonResults table {
+    width: 800px;
+    margin: 0px 185px 0px 185px;
+}
+
+#lessonResults table th{
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+
+#lessonResults table td{
+    font-size: 25px;
+    padding: 20px;
+}
+
+#lessonResults table td:nth-child(1) {
+    padding-left: 50px;
+    width: 80%;
+}
+
+#lessonResults table td:nth-child(2) {
+    width: 20%;
+    text-align: center;
+}
+
+#btnContinue {
+    width: 400px;
+    height: 100px;
+    margin: 50px 385px 100px 385px;
+
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabuleryX", "VocabuleryX\VocabuleryX.csproj", "{60ABD199-6D38-4786-BE6E-2B7FE866A037}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabuleryX.DAL", "VocabuleryX.DAL\VocabuleryX.DAL.csproj", "{0D562883-5A0E-40DC-ADBF-2B27B9C5BBD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60ABD199-6D38-4786-BE6E-2B7FE866A037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60ABD199-6D38-4786-BE6E-2B7FE866A037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60ABD199-6D38-4786-BE6E-2B7FE866A037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60ABD199-6D38-4786-BE6E-2B7FE866A037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D562883-5A0E-40DC-ADBF-2B27B9C5BBD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D562883-5A0E-40DC-ADBF-2B27B9C5BBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D562883-5A0E-40DC-ADBF-2B27B9C5BBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D562883-5A0E-40DC-ADBF-2B27B9C5BBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<VocabuleryX.Models.LearWordModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    var words = [];
+    var voices;
+    speechSynthesis.onvoiceschanged = function () {
+        voices = window.speechSynthesis.getVoices();
+    };
+    @foreach (var item in Model) { 
+
+        <text> words.push(JSON.parse(@Html.Raw($"'{Json.Encode(item)}'")));</text>
+    }
+    
+</script>
+
+
+    <div class="container text-center" id="lesson1">
+        <div class="form-inline">
+            <div class="row">
+                <div class="form-group">
+                    <span class="originWord"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group voice" data-voice-id="1">David</div>
+                <div class="form-group voice" data-voice-id="2">Heera</div>
+                <div class="form-group voice" data-voice-id="3">Hazel</div>
+                <div class="form-group voice" data-voice-id="7">UK Female</div>
+            </div>
+            <div id="lesson1-options">
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center" id="lesson3">
+        <div class="form-inline">
+            <div class="row">
+                <div class="form-group">
+                    <span class="originWord"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group voice" data-voice-id="4">Lister</div>
+                @*<div class="form-group voice" data-voice-id="20">Heera</div>*@
+            </div>
+            <div class="row" id="charsGroup">
+            </div>
+            <div class="row" id="spell">
+            </div>
+        </div>
+    </div>
+@using (Html.BeginForm("Complete", "Learn", FormMethod.Post, new { id = "lessonComplete" }))
+{
+    <div class="container" id="lessonResults">
+        <h2 class="text-center">Training is complete</h2>
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Mistakes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <input type="hidden" value="123" name="huy1"/>
+                        <span name="huy">cricket - сверчокs</span>
+                    </td>
+                    <td>1</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <button class="btn btn-default" id="btnContinue">Continue</button>
+        </div>
+    </div>
+
+}
+@section scripts{
+    @Scripts.Render("~/Scripts/Repetition/repetition.js")
+    @Styles.Render("~/Content/repetition.css")
+}
+
