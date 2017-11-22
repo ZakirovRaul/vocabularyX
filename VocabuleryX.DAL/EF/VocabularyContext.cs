@@ -28,11 +28,11 @@ namespace VocabuleryX.DAL.EF
     {
         protected override void Seed(VocabularyContext context)
         {
-            context.Words.Add(new Word() { Origin = "gander", Version = "гусак" });
-            context.Words.Add(new Word() { Origin = "waddle", Version = "ходить в перевалку" });
-            context.Words.Add(new Word() { Origin = "silly", Version = "глупый" });
-            context.Words.Add(new Word() { Origin = "nearsighted", Version = "близорукий" });
-            context.Words.Add(new Word() { Origin = "dreadfully", Version = "ужасно" });
+            //context.Words.Add(new Word() { Origin = "gander", Version = "гусак" });
+            //context.Words.Add(new Word() { Origin = "waddle", Version = "ходить в перевалку" });
+            //context.Words.Add(new Word() { Origin = "silly", Version = "глупый" });
+            //context.Words.Add(new Word() { Origin = "nearsighted", Version = "близорукий" });
+            //context.Words.Add(new Word() { Origin = "dreadfully", Version = "ужасно" });
             base.Seed(context);
         }
     }

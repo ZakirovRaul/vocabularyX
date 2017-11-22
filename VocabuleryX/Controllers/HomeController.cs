@@ -10,23 +10,29 @@ namespace VocabuleryX.Controllers
 {
     public class HomeController : Controller
     {
-        private EFUnitOfWork ef;
+        private EFUnitOfWork db;
 
         public HomeController()
         {
-            ef = new EFUnitOfWork();
+            db = new EFUnitOfWork();
         }
 
         public ActionResult Index()
         {
-            return View();
+            HomeViewModel viewModel = new HomeViewModel();
+            viewModel.TotalWords = db.Words.All.Count();
+            viewModel.NextWords = db.Words.Find(x => x.ProcessDate == null).Take(5).ToArray();
+            viewModel.OldWords = db.Words.All.OrderBy(x => x.ProcessDate).Take(5).ToArray();
+            viewModel.ErrorWords = db.Words.All.OrderBy(x => x.Status).Take(5).ToArray();
+
+            return View(viewModel);
         }
 
         public ActionResult Training()
         {
             var viewModel = new TrainingViewModel();
-            viewModel.NewWords = ef.Words.Find(x => x.ProcessDate == null).Take(5).ToArray();
-            viewModel.OldWords = ef.Words.Find(x => x.ProcessDate != null).OrderBy(x => x.ProcessDate).Take(5).ToArray();
+            viewModel.NewWords = db.Words.Find(x => x.ProcessDate == null).Take(5).ToArray();
+            viewModel.OldWords = db.Words.Find(x => x.ProcessDate != null).OrderBy(x => x.ProcessDate).Take(5).ToArray();
             return View(viewModel);
         }
 

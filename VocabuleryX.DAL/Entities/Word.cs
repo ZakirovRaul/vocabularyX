@@ -13,8 +13,12 @@ namespace VocabuleryX.DAL.Entities
     {
         [Key]
         public int Id { get; set; }
-        public string Origin { get; set; }
-        public string Version { get; set; }
+        public string Name { get; set; }
+
+        public string Translation { get; set; }
+
+        //public string Origin { get; set; }
+        //public string Version { get; set; }
         public int Status { get; set; }
         public DateTime? ProcessDate { get; set; }
 

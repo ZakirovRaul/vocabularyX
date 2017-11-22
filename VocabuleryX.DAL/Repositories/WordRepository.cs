@@ -45,6 +45,11 @@ namespace VocabuleryX.DAL.Repositories
             db.SaveChanges();
         }
 
+        public IQueryable<Word> All
+        {
+            get { return db.Words; }
+        }
+
         public bool Delete(int id)
         {
             var item = db.Words.Find(id);

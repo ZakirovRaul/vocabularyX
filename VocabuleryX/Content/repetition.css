@@ -91,5 +91,42 @@
     width: 400px;
     height: 100px;
     margin: 50px 385px 100px 385px;
+}
+
+/*#lessonComplete span .left {
+    float: right;
+    padding-right: 100px;
+}
+
+#lessonComplete span .right {
+    float: left;
+    padding-right: 100px;
+}*/
+
+#lessonComplete {
+    display: none;
+}
+
+#lessonComplete table {
+    width: 800px;
+    margin: auto;
+}
+
+#lessonComplete table tbody tr td {
+    line-height: 50px;
+    width: 400px;
+    padding: 0px;
+    border: 0px;
+}
+
+.col-left{
+    float: right;
+    padding-right: 50px;
+
+}
+
+.col-right{
+    float: left;
+    padding-left: 50px;
 
 }

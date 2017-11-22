@@ -67,3 +67,33 @@
 footer {
     text-align: center;
 }
+
+.mainPage {
+    padding-top: 50px;
+}
+
+
+.option {
+    display: inline-block;
+    width: 350px;
+    height: 400px;
+}
+
+.option span {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.option ul {
+    margin-top: 50px; 
+    padding: 0px;
+    list-style: none;
+}
+
+.option ul li {
+    font-size: 15px;
+    margin-top: 10px;
+}

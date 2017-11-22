@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Classes\Mistake.cs" />
     <Compile Include="EF\VocabularyContext.cs" />
     <Compile Include="Entities\Word.cs" />
     <Compile Include="Interfaces\IDataEntity.cs" />

@@ -14,5 +14,6 @@ namespace VocabuleryX.DAL.Interfaces
         void Create(T item);
         void Update(T item);
         bool Delete(int id);
+        IQueryable<T> All { get; }
     }
 }

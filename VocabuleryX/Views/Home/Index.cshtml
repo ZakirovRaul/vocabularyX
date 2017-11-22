@@ -1,8 +1,122 @@
-﻿@{
+﻿@model VocabuleryX.Models.HomeViewModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="row row-fix-height">
+@*<div class="row row-fix-height">
     <button class="btn btn-default" id='btnStart'>Welcome to xxx.com. You have no words in the dictionary.<br/>
         Please add words first, before begin</button>
+</div>*@
+
+<div class="mainPage">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span>Total Words:@Model.TotalWords</span>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="@Url.Action("Index", "Learn", new RouteValueDictionary() { {"type", "new"} })">
+                            <div class="option btn btn-default">
+                                <span>Learn New Words</span>
+                                <ul>
+                                    @foreach (var word in Model.NextWords)
+                                    {
+                                        <li>@word.Name</li>
+                                    }
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="@Url.Action("Index", "Learn", new RouteValueDictionary() { {"type", "old"} })">
+                            <div class="option btn btn-default">
+                                <span>Repeat Old Words</span>
+                                <ul>
+                                    @foreach (var word in Model.OldWords)
+                                    {
+                                        <li>@word.Name</li>
+                                    }
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="@Url.Action("Index", "Learn", new RouteValueDictionary() { {"type", "erros"} })">
+                            <div class="option btn btn-default">
+                                <span>Need to Repeat Words</span>
+                                <ul>
+                                    @foreach (var word in Model.ErrorWords)
+                                    {
+                                        <li>@word.Name</li>
+                                    }
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="panel panel-default">
+            <div class="panel-body">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>*@
+    </div>
 </div>
+
+<script src="~/Scripts/Chart.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    var randomScalingFactor = function () {
+        var min = 1;
+        var max = 1000;
+        return Math.floor(Math.random() * (max - min) + min);
+    };
+
+    var config = {
+        type: 'line',
+        data: {
+            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            datasets: [{
+                label: "My First dataset",
+                backgroundColor: "rgb(255, 99, 132)",
+                borderColor: "rgb(255, 99, 132)",
+                fill: false,
+                data: [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor()
+                ],
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Chart title'
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                }],
+                yAxes: [{
+                    display: true,
+                    type: 'linear'
+                }]
+            }
+        }
+    };
+
+
+
+    var ctx = $('#lineChart')[0].getContext('2d');
+    var myLineChart = new Chart(ctx, config);
+
+</script>
