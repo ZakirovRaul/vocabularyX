@@ -1,0 +1,94 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Import Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/Dev/import.js")"></script>
+}
+<div class="container container-panel">
+    <h2 class="text-center">Import Panel</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <input id="btnChooseFile" type="file" accept="text/plain" class="btn btn-default">
+                <button id="btnSave" class="btn btn-default">Save</button>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <table id="tableDic" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Text</th>
+                    <th>Translation</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @*<tr id="newRowTemplate" class="hidden">
+                    <td><input class="input-lg col-lg-12"></td>
+                    <td><input class="input-lg col-lg-12"></td>
+                    <td>
+                        <div class="">
+                            <a href="#" class="editRowYes">Save</a>
+                            <a href="#" class="editRowNo">Cancel</a>
+                        </div>
+                    </td>
+                </tr>  
+                <tr class="text-danger" data-edit="false" id="0">
+                    <td><div class="readMode">chapter 5</div><input class="input-lg col-lg-12 editMode hidden" value="chapter 5"></td>
+                    <td><div class="readMode"></div><input class="input-lg col-lg-12 editMode hidden" value=""></td>
+                    <td>
+                        <div class="readMode">
+                            <span class="btn-link editRow">Edit</span> | 
+                            <span class="btn-link deleteRow">Delete</span>
+                        </div>
+                        <div class="editMode hidden">
+                            <span class="btn-link editRowYes">Save</span>
+                            <span class="btn-link editRowNo">Cancel</span>
+                        </div>
+                    </td>
+                </tr>    
+                <tr>
+                    <td colspan="3" class="format-error">
+                        <div class="alert alert-danger alert-dismissable fade in format-error">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            Invalid format
+                        </div>
+                    </td>
+                </tr>
+                <tr class="text-danger" data-edit="false" id="1">
+                    <td><div class="readMode">grind молоть, растереть, точить</div><input class="input-lg col-lg-12 editMode hidden" value="grind молоть, растереть, точить"></td>
+                    <td><div class="readMode"></div><input class="input-lg col-lg-12 editMode hidden" value=""></td>
+                    <td>
+                        <div class="readMode">
+                            <span class="btn-link editRow">Edit</span> | 
+                            <span class="btn-link deleteRow">Delete</span>
+                        </div>
+                        <div class="editMode hidden">
+                            <span class="btn-link editRowYes">Save</span>
+                            <span class="btn-link editRowNo">Cancel</span>
+                        </div>
+                    </td>
+                </tr>                <tr data-edit="false">
+                    <td><div class="readMode origin">grind</div><input class="input-lg col-lg-12 editMode hidden" value="grind"></td>
+                    <td><div class="readMode">молоть, растереть, точить</div><input class="input-lg col-lg-12 editMode hidden" value="молоть, растереть, точить"></td>
+                    <td>
+                        <div class="readMode">
+                            <span class="btn-link editRow">Edit</span> | 
+                            <span class="btn-link deleteRow">Delete</span>
+                        </div>
+                        <div class="editMode hidden">
+                            <span class="btn-link editRowYes">Save</span>
+                            <span class="btn-link editRowNo">Cancel</span>
+                        </div>
+                    </td>
+                </tr>*@
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -2,11 +2,19 @@
 
 }
 
-.center {
+
+#jsGrid {
     margin: auto;
 }
 
-
-.grid_wrapper {
+.import {
+    width: 800px;
+    margin: auto;
     padding-top: 50px;
+    padding-bottom: 5px;
+}
+
+.import a {
+    width: 75px;
+    margin-left: 725px;
 }

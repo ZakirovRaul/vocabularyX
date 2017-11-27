@@ -13,11 +13,14 @@
     @*@Styles.Render("~/Content/dictionary.css")
     @Scripts.Render("~/Scripts/Div/dictionary.js");*@
 }
-<div class="grid_wrapper">
-    <div id="jsGrid" class="center">
-        
-    </div>
+
+<div class="import">
+    <a class="btn btn-default" href="@Url.Action("Index", "Import")">Import</a>     
 </div>
+<div id="jsGrid">
+
+</div>
+
 <script src="~/Scripts/js-grid/jsgrid.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     
